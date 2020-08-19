@@ -9,7 +9,7 @@ import acbm.oxygen as o
 import acbm.energy as e
 import acbm.labor as l
 import acbm.non_electric as ne
-#import acbm.financing as f
+import acbm.financing as f
 
 ##### Media Related variables per scenario ########
 ACC = [10000000.0, 95000000.0, 95000000.0, 200000000.0]     # Achievable cell concentration cells/mL
@@ -78,6 +78,7 @@ for scen in scenarios:
     scen = e.update_energy_results(scen)
     scen = l.update_labor_results(scen)
     scen = ne.update_non_electric_results(scen)
+    scen = f.update_financing_results(scen)
 
 # custom scenario
 scenario_custom = bm.update_bio_and_media_results(scenario_custom)
