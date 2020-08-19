@@ -1,3 +1,4 @@
 .vscode/
 acbm_venv/
 *.pyc
+model_results.json
