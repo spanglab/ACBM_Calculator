@@ -1,19 +1,11 @@
-import math
-from constants import *
-from bioreactor_and_media import *
+from acbm import constants as c
 
-## Manpower Calculation
+def update_labor_results(scen):
 
-Manpower_Cost1 = (BioReact1)
-Manpower_Cost2 = (BioReact2)
-Manpower_Cost3 = (BioReact3)
-Manpower_Cost4 = (BioReact4)
-cust_Manpower_Cost = (cust_BioReact)
+    ## Manpower Calculation
+    scen['Manpower_Cost'] = scen['BioReact']
 
-## Annual Labor Costs
+    ## Annual Labor Costs
+    scen['Ann_Labor_Cost'] = scen['Manpower_Cost'] * c.Labor_Cost_Corr_Fact * c.prod_worker_wage * c.AnnOpTime
 
-Ann_Labor_Cost1 = Manpower_Cost1 * Labor_Cost_Corr_Fact * prod_worker_wage * AnnOpTime
-Ann_Labor_Cost2 = Manpower_Cost2 * Labor_Cost_Corr_Fact * prod_worker_wage * AnnOpTime
-Ann_Labor_Cost3 = Manpower_Cost3 * Labor_Cost_Corr_Fact * prod_worker_wage * AnnOpTime
-Ann_Labor_Cost4 = Manpower_Cost4 * Labor_Cost_Corr_Fact * prod_worker_wage * AnnOpTime
-cust_Ann_Labor_Cost = cust_Manpower_Cost * Labor_Cost_Corr_Fact * prod_worker_wage * AnnOpTime
+    return scen

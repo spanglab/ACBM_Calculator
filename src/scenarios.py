@@ -7,9 +7,9 @@ import acbm.constants as c
 import acbm.bioreactor_and_media as bm
 import acbm.oxygen as o
 import acbm.energy as e
+import acbm.labor as l
+import acbm.non_electric as ne
 #import acbm.financing as f
-#import acbm.labor as l
-#import acbm.non_electric as ne
 
 ##### Media Related variables per scenario ########
 ACC = [10000000.0, 95000000.0, 95000000.0, 200000000.0]     # Achievable cell concentration cells/mL
@@ -76,11 +76,15 @@ for scen in scenarios:
     scen = bm.update_bio_and_media_results(scen)
     scen = o.update_oxygen_results(scen)
     scen = e.update_energy_results(scen)
+    scen = l.update_labor_results(scen)
+    scen = ne.update_non_electric_results(scen)
 
 # custom scenario
 scenario_custom = bm.update_bio_and_media_results(scenario_custom)
 scenario_custom = o.update_oxygen_results(scenario_custom)
 scenario_custom = e.update_energy_results(scenario_custom)
+scenario_custom = l.update_labor_results(scenario_custom)
+scenario_custom = ne.update_non_electric_results(scenario_custom)
 
 # #### Data Lists #####
 # Costs_Bioequip = [bm.BioEquip1, bm.BioEquip2, bm.BioEquip3, bm.BioEquip4, bm.BioEquip_Cust]
