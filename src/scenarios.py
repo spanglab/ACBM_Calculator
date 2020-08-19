@@ -6,7 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import acbm.constants as c
 import acbm.bioreactor_and_media as bm
 import acbm.oxygen as o
-#import acbm.energy as e
+import acbm.energy as e
 #import acbm.financing as f
 #import acbm.labor as l
 #import acbm.non_electric as ne
@@ -75,10 +75,12 @@ for scen in scenarios:
     # bioreactor and media -----------------------------------------------------
     scen = bm.update_bio_and_media_results(scen)
     scen = o.update_oxygen_results(scen)
+    scen = e.update_energy_results(scen)
 
 # custom scenario
 scenario_custom = bm.update_bio_and_media_results(scenario_custom)
 scenario_custom = o.update_oxygen_results(scenario_custom)
+scenario_custom = e.update_energy_results(scenario_custom)
 
 # #### Data Lists #####
 # Costs_Bioequip = [bm.BioEquip1, bm.BioEquip2, bm.BioEquip3, bm.BioEquip4, bm.BioEquip_Cust]
