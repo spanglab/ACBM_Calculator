@@ -88,6 +88,7 @@ with open('model_results.json', 'w') as outfile:
 
 # rename and save subset to output values used by web app
 return_key_map = {
+    'name': 'name',
     # plot values
     'BioEquip': 'Costs_Bioequip',
     'BioEquip_total': 'Min_Cap_Exp',
