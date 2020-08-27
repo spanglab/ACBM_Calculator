@@ -35,7 +35,7 @@ def update_financing_results(scen):
     scen['tot_debt_cost'] = Total_Debt_Cost(scen['BioEquip_total'])
     scen['ann_debt_payment'] = Ann_Debt_Payment(scen['tot_debt_cost'])
     scen['tot_ann_payment'] = scen['ann_debt_payment'] + scen['ann_equity_recov']
-    scen['cap_expend_with_debt_equity'] = scen['tot_ann_payment'] + Economic_Life
+    scen['cap_expend_with_debt_equity'] = scen['tot_ann_payment'] * Economic_Life
 
     ## Final Finance Values
     scen['Min_Ann_Op_Cost'] = float(scen['Fix_Manu_Cost'] + scen['AnnMediaCost'] + scen['Ann_O2_Cost'] + scen['Elect_Cost'] + scen['Ann_Labor_Cost'] + scen['Ann_Water_Cost'])
