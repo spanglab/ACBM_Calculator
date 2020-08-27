@@ -85,3 +85,27 @@ for scen in scenarios:
 # save results to JSON file
 with open('model_results.json', 'w') as outfile:
     json.dump(scenarios, outfile)
+
+# rename and save subset to output values used by web app
+return_key_map = {
+    'name': 'name',
+    'BioEquip': 'Costs_Bioequip',
+    'BioEquip_total': 'Min_Cap_Exp',
+    'Fix_Manu_Cost': 'Costs_Fixed_Manu',
+    'AnnMediaCost': 'Media_Costs',
+    'Ann_O2_Cost': 'O2_costs',
+    'Elect_Cost': 'Elect_costs',
+    'Ann_Labor_Cost': 'Labor_costs',
+    'Ann_Water_Cost': 'Non_Electric_costs',
+    'Min_Ann_Op_Cost': 'Min_Ann_Op_Cost',
+    'cap_expend_with_debt_equity': 'cap_expend_with_debt_equity',
+    'Min_ACBM_tomeet_Exp': 'Min_ACBM_tomeet_Exp',
+    'Min_Ann_Cap_Op_Expend': 'Min_Ann_Cap_Op_Expend',
+    'Min_ACBM_Price': 'Min_ACBM_Price'
+}
+scenario_data = []
+for scen in scenarios:
+    scenario_data.append({ return_key_map[k]: scen[k] for k in return_key_map })
+
+with open('scenario_data.json', 'w') as outfile:
+    json.dump(scenario_data, outfile)

@@ -2,3 +2,4 @@
 acbm_venv/
 *.pyc
 model_results.json
+scenario_data.json
