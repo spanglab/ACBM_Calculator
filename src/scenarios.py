@@ -88,7 +88,7 @@ with open('model_results.json', 'w') as outfile:
 
 # rename and save subset to output values used by web app
 return_key_map = {
-    'name': 'name',
+    # plot values
     'BioEquip': 'Costs_Bioequip',
     'BioEquip_total': 'Min_Cap_Exp',
     'Fix_Manu_Cost': 'Costs_Fixed_Manu',
@@ -101,7 +101,25 @@ return_key_map = {
     'cap_expend_with_debt_equity': 'cap_expend_with_debt_equity',
     'Min_ACBM_tomeet_Exp': 'Min_ACBM_tomeet_Exp',
     'Min_Ann_Cap_Op_Expend': 'Min_Ann_Cap_Op_Expend',
-    'Min_ACBM_Price': 'Min_ACBM_Price'
+    'Min_ACBM_Price': 'Min_ACBM_Price',
+    # other values
+    'BioReact': 'BioReact',
+    'AnnBatches': 'AnnBatches',
+    'Media_Vol': 'Media_Vol',
+    'MediaChargeBatch': 'MediaChargeBatch',
+    'TotGluConBatch': 'TotGluConBatch',
+    'GluInCharge': 'GluInCharge',
+    'GluConInMatPhase': 'GluConInMatPhase',
+    'GluConInGrowthPhase': 'GluConInGrowthPhase',
+    'AnnVolMedia': 'AnnVolMedia',
+    'Media_Cost': 'Media_Cost',
+    'Ann_O2_Consum': 'Ann_O2_Consum',
+    'O2_consum_batch': 'O2_consum_batch',
+    'total_O2_cons_growth': 'total_O2_cons_growth',
+    'total_Elect': 'total_Elect',
+    'Elect_Cool_BioReact': 'Elect_Cool_BioReact',
+    'Elect_Heat_Media': 'Elect_Heat_Media',
+    'tot_ann_payment': 'tot_ann_payment'
 }
 scenario_data = []
 for scen in scenarios:
