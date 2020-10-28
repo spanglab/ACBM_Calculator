@@ -21,20 +21,9 @@ GConInBM = [0.0178, 0.0267, 0.0267, 0.0356]                 # Glucose concentrat
 TGFB = [80900000 * 0.000002, 80900000 * 0.000002, 80900000 * 0.000002, 0.0] # Scenario TGF-b Costs
 Transferrin = [4.28, 4.28, 4.28, 0.0]                       # Cost of Transferrin
 
-###### Custom scenario starting values  #########
-cust_ACC = 10000000.0
-cust_Ug = 0.000000000000413
-cust_MatTime = 240.0
-cust_hr_doub = 24.0
-cust_FGF2Con = 0.0001
-cust_FGF2Cost = 2005000.0
-cust_GConInBM = 0.0178
-cust_TGFB = 80900000 * 0.000002
-cust_Transferrin = 4.28
-
 # scenarios --------------------------------------------------------------------
 
-# base
+# featured
 scenarios = []
 for i in range(4):
     scen = {
@@ -51,23 +40,6 @@ for i in range(4):
         'Transferrin': Transferrin[i]
     }
     scenarios.append(scen)
-
-# custom
-scenario_custom = {
-    'BRWV': c.BRWV,
-    'name': f'scenario custom',
-    'ACC': cust_ACC,
-    'Ug': cust_Ug,
-    'MatTime': cust_MatTime,
-    'd': cust_hr_doub,
-    'FGF2Con': cust_FGF2Con,
-    'FGF2Cost': cust_FGF2Cost,
-    'GConInBM': cust_GConInBM,
-    'TGFB': cust_TGFB,
-    'Transferrin': cust_Transferrin
-}
-
-scenarios.append(scenario_custom)
 
 def run_model(scen):
     '''Run each of the update functions for the provided scenario.'''
