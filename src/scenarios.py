@@ -1,7 +1,7 @@
 import os, sys, json
 
 # acbm model functions
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import acbm.constants as c
 import acbm.bioreactor_and_media as bm
 import acbm.oxygen as o
@@ -15,11 +15,17 @@ ACC = [10000000.0, 95000000.0, 95000000.0, 200000000.0]     # Achievable cell co
 Ug = [0.000000000000413, 0.000000000000207, 0.000000000000207, 0.0000000000000413]  # Ug = Glu. cons. rate per cell (mol/ h cell)
 MatTime = [240, 156, 156, 24]                               # Maturation Time (h)
 d = [24.0, 16.0, 16.0, 8.0]                                 # Hours per doubling (h)
-FGF2Con = [0.0001, 0.0005, 0.0005, 0.0]                     # FGF-2 conc. (g/L)
-FGF2Cost = [2005000.0, 1002500.0, 0.0, 0.0]                 # FGF-2 cost (USD/g)
+FGF2Con = [0.0001, 0.00005, 0.00005, 0.0]                   # FGF-2 conc. (g/L)
 GConInBM = [0.0178, 0.0267, 0.0267, 0.0356]                 # Glucose concentration in basal media (mol/L)
+
+BaseMedia_cost = [3.12, 3.12, 3.12, 0.24]                   # Basal Media Cost ($/L)
+FGF2_cost = [2005000.0, 1002500.0, 0.0, 0.0]                # FGF-2 cost (USD/g)
 TGFB = [80900000 * 0.000002, 80900000 * 0.000002, 80900000 * 0.000002, 0.0] # Scenario TGF-b Costs
 Transferrin = [4.28, 4.28, 4.28, 0.0]                       # Cost of Transferrin
+AA2p_cost = [7.84, 7.84, 7.84, 0.0]                         # $/g
+NaHCO3_cost = [0.01, 0.01, 0.01, 0.0]                       # $/g
+NaSe_cost = [0.1, 0.1, 0.1, 0.0]                            # $/g
+Insulin_cost = [340, 340, 340, 0.0]                         # $/g
 
 # scenarios --------------------------------------------------------------------
 
@@ -34,10 +40,16 @@ for i in range(4):
         'MatTime': MatTime[i],
         'd': d[i],
         'FGF2Con': FGF2Con[i],
-        'FGF2Cost': FGF2Cost[i],
         'GConInBM': GConInBM[i],
-        'TGFB': TGFB[i],
-        'Transferrin': Transferrin[i]
+
+        'BaseMediaCost': BaseMedia_cost[i],
+        'FGF2_cost': FGF2_cost[i],
+        'TGFBCost': TGFB[i],
+        'TransferrinCost': Transferrin[i],
+        'AA2pCost': AA2p_cost[i],
+        'NaHCO3Cost': NaHCO3_cost[i],
+        'NaSeCost': NaSe_cost[i],
+        'InsulinCost': Insulin_cost[i]
     }
     scenarios.append(scen)
 

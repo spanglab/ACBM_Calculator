@@ -6,11 +6,6 @@ BRUC = 50000.0                      # Bioreactor Unit Cost = $50,000 per reactor
 Adj_BioR_valu = 1.29                # Adjusted Bioreactor value
 BV = 20.0                           # Bioreactor volume (m^3)
 BioRScF = 0.60                      # Bioreactor Scale Factor
-BaseMedia_cost = 3.12               # Basal Media Cost $/L
-AA2p_cost = 7.84                    # $/g
-NaHCO3_cost = 0.01                  # $/g
-NaSe_cost = 0.1                     # $/g
-Insulin_cost = 340                  # $/g
 AA2P_conc = 0.064                   # g/L
 NaHCO3_conc = 0.543                 # g/L
 NaSe_conc = 0.000014                # g/L

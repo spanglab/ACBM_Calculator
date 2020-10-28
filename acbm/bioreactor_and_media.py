@@ -73,14 +73,14 @@ def update_bio_and_media_results(scen):
     scen['Fix_Manu_Cost'] = scen['BioEquip_total'] * c.FixManuCost_Factor
 
     # Cost of Media per L
-    scen['Media_Cost'] = float(c.BaseMedia_cost + 
-                               scen['TGFB'] + 
-                               scen['Transferrin'] + 
-                               (c.Insulin_cost * c.Insulin_conc) + 
-                               (c.NaSe_cost * c.NaSe_conc) + 
-                               (c.NaHCO3_cost * c.NaHCO3_conc) + 
-                               (c.AA2p_cost * c.AA2P_conc) + 
-                               (scen['FGF2Con'] * scen['FGF2Cost']))
+    scen['Media_Cost'] = float(scen['BaseMediaCost'] + 
+                               scen['TGFBCost'] + 
+                               scen['TransferrinCost'] + 
+                               (scen['InsulinCost'] * c.Insulin_conc) + 
+                               (scen['NaSeCost'] * c.NaSe_conc) + 
+                               (scen['NaHCO3Cost'] * c.NaHCO3_conc) + 
+                               (scen['AA2pCost'] * c.AA2P_conc) + 
+                               (scen['FGF2_cost'] * scen['FGF2Con']))
     
     # Annual Volume of Media
     scen['AnnVolMedia'] = scen['Media_Vol'] * scen['AnnBatches']
