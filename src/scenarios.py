@@ -20,8 +20,8 @@ GConInBM = [0.0178, 0.0267, 0.0267, 0.0356]                 # Glucose concentrat
 
 BaseMedia_cost = [3.12, 3.12, 3.12, 0.24]                   # Basal Media Cost ($/L)
 FGF2_cost = [2005000.0, 1002500.0, 0.0, 0.0]                # FGF-2 cost (USD/g)
-TGFB = [80900000 * 0.000002, 80900000 * 0.000002, 80900000 * 0.000002, 0.0] # Scenario TGF-b Costs
-Transferrin = [4.28, 4.28, 4.28, 0.0]                       # Cost of Transferrin
+TGFB = [80900000, 80900000, 80900000, 0.0]                  # Scenario TGF-b Costs
+Transferrin = [400, 400, 400, 0.0]                          # Cost of Transferrin
 AA2p_cost = [7.84, 7.84, 7.84, 0.0]                         # $/g
 NaHCO3_cost = [0.01, 0.01, 0.01, 0.0]                       # $/g
 NaSe_cost = [0.1, 0.1, 0.1, 0.0]                            # $/g

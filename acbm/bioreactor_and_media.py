@@ -74,8 +74,8 @@ def update_bio_and_media_results(scen):
 
     # Cost of Media per L
     scen['Media_Cost'] = float(scen['BaseMediaCost'] + 
-                               scen['TGFBCost'] + 
-                               scen['TransferrinCost'] + 
+                               scen['TGFBCost'] * 0.000002 + 
+                               scen['TransferrinCost'] * 0.0107 + 
                                (scen['InsulinCost'] * c.Insulin_conc) + 
                                (scen['NaSeCost'] * c.NaSe_conc) + 
                                (scen['NaHCO3Cost'] * c.NaHCO3_conc) + 
